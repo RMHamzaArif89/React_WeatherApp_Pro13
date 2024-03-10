@@ -109,7 +109,8 @@ div.input i {
     display: flex;
     align-items: center;
     flex-direction: column;
-    display: none;
+    justify-content: space-around;
+    
 }
 
 
@@ -120,7 +121,7 @@ div.input i {
 
 
 div.img {
-    margin: 4% 0;
+    /* margin: 4% 0; */
 }
 
 div.img img {
@@ -171,17 +172,17 @@ div.img img {
 
 
 .tem {
-    margin-top: 3%;
+    /* margin-top: 3%; */
     font-size: 2.8rem;
-    color: white;
-    font-family: "Silkscreen", sans-serif;
+    color:red;
+    font-family: "Sora", sans-serif;
     font-weight: 400;
     font-style: normal;
 
 }
 
 .c-name {
-    margin-top: 2%;
+    /* margin-top: 2%; */
     font-size: 2rem;
     color: white;
     font-family: "Silkscreen", sans-serif;
@@ -192,6 +193,63 @@ div.img img {
 
 
 }
+
+
+
+
+
+
+
+
+
+div.det {
+    
+    width: 86%;
+    display: flex;
+    
+
+
+}
+
+div.humadity {
+    width: 50%;
+    display: flex;
+    gap: 1.5rem;
+
+}
+
+div.w-speed {
+    width: 50%;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.data {
+    width: 34px;
+    height: 34px;
+    color: white;
+ 
+}
+
+
+.percentage,
+.speed {
+    font-size: 1.3rem;
+    color: white;
+    font-family: sans-serif;
+
+
+
+}
+
+div.text {
+    color: white;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+} 
 
 
 
