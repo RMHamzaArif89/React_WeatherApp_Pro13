@@ -55,27 +55,27 @@ function FrontPage() {
 
     let checkweather=()=>{
         
-if (data.weather[0].main == 'Clouds') {
+if (data.weather[0].main === 'Clouds') {
     return ('/images/clouds.png')
 }
-else if (data.weather[0].main == 'Rain') {
+else if (data.weather[0].main === 'Rain') {
    return ('/images/rain.png')
 }
-else if (data.weather[0].main == 'Drizzle') {
+else if (data.weather[0].main === 'Drizzle') {
    return ('/images/lightning-rain.png')
 }
-else if (data.weather[0].main == 'Clear') {
+else if (data.weather[0].main === 'Clear') {
     // console.log('clear')
    return ('/images/sun.png')
     
 }
-else if (data.weather[0].main == 'Mist') {
+else if (data.weather[0].main === 'Mist') {
    return ('/images/sun-behind-cloud.png')
 }
-else if (data.weather[0].main == 'Snow') {
+else if (data.weather[0].main === 'Snow') {
    return ('/images/snow.png' )
 }
-else if (data.weather[0].main == 'Smoke') {
+else if (data.weather[0].main === 'Smoke') {
    return ('/images/smoke.png')
 }else{
     return ('/images/else.png')
@@ -107,7 +107,7 @@ else if (data.weather[0].main == 'Smoke') {
 
 
                       <div className="img"><img src={checkweather()} alt="" /></div>
-                        <div className="tem">{data.main.temp}C</div>
+                        <div className="tem">{data.main.temp}°C</div>
                         <div className="c-name">{data.name}</div>
 
 
@@ -115,7 +115,7 @@ else if (data.weather[0].main == 'Smoke') {
                         <div className="det">
                             <div className="humadity"><img className="data" src="/images/humidity.png" alt="" />
                                 <div className="text">
-                                    <div className="percentage">{data.main.humidity}</div>
+                                    <div className="percentage">{data.main.humidity}%</div>
                                     <div className="text">Humidity</div>
                                 </div>
                             </div>
