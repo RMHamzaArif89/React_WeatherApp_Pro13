@@ -6,6 +6,7 @@ function FrontPage() {
     let [val, setVal] = useState('')
     let [city, setCity] = useState('faisalabad')
     let [data, setData] = useState(null)
+    let [img,setImg] = useState('')
     // let [cName, setCityName] = useState('')
     // let [Humidity, setHumidity] = useState('')
     // let [temprature, setTemprature] = useState('')
@@ -23,9 +24,12 @@ function FrontPage() {
 
     let searchFunc=()=>{
         setCity(val)
+       
+    
     }
 
-// console.log(data)
+//set the img according to weather condition
+
 
 
 
@@ -37,14 +41,47 @@ function FrontPage() {
     
             const res = await axios.get(apiUrl + city + `&appid=${apiKey}`)
             setData(res.data)
+
     
           
         }
 
         FetchApi()
-        
+       
+      
 
     }, [city,val])
+   
+
+    let checkweather=()=>{
+        
+if (data.weather[0].main == 'Clouds') {
+    return ('/images/clouds.png')
+}
+else if (data.weather[0].main == 'Rain') {
+   return ('/images/rain.png')
+}
+else if (data.weather[0].main == 'Drizzle') {
+   return ('/images/lightning-rain.png')
+}
+else if (data.weather[0].main == 'Clear') {
+    // console.log('clear')
+   return ('/images/sun.png')
+    
+}
+else if (data.weather[0].main == 'Mist') {
+   return ('/images/sun-behind-cloud.png')
+}
+else if (data.weather[0].main == 'Snow') {
+   return ('/images/snow.png' )
+}
+else if (data.weather[0].main == 'Smoke') {
+   return ('/images/smoke.png')
+}else{
+    return ('/images/else.png')
+}
+        
+    }
     return (
         <>
             <div className='front-container'>
@@ -65,10 +102,11 @@ function FrontPage() {
 
                {data?<>
                <div className="tempreture">
-                        <div className="img"><img className={''} src="" alt="" /></div>
+
+                      
 
 
-
+                      <div className="img"><img src={checkweather()} alt="" /></div>
                         <div className="tem">{data.main.temp}C</div>
                         <div className="c-name">{data.name}</div>
 
